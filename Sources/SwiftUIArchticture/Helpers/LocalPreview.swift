@@ -6,10 +6,10 @@ import SwiftUI
 
 /// Previews view in all supported locales
 public struct LocalePreview<Content: View>: View {
-   let content: () -> Content
-    private let previewContent: [LocalePreviewContent]
+    let content: () -> Content
+    public let previewContent: [LocalePreviewContent]
     
-    init(
+    public init(
         previewDevices: [PreviewDevice] = [],
         _ content: @escaping  () -> Content
     ) {
@@ -17,7 +17,7 @@ public struct LocalePreview<Content: View>: View {
         self.previewContent = Self.preview(forDevices: previewDevices)
     }
     
-    private static func preview(
+    public static func preview(
         forDevices previewDevices: [PreviewDevice]
     ) -> [LocalePreviewContent] {
         var previewContent = [LocalePreviewContent]()
@@ -32,7 +32,7 @@ public struct LocalePreview<Content: View>: View {
         }
         return previewContent
     }
-
+    
     public var body: some View {
         Group {
             ForEach(previewContent) { preview in
@@ -47,14 +47,14 @@ public struct LocalePreview<Content: View>: View {
 
 // MARK: - LocalePreviewContent
 
-private struct LocalePreviewContent: Identifiable {
+public struct LocalePreviewContent: Identifiable {
     let id = UUID()
     let device: PreviewDevice?
     let locale: Locale
 }
 
 // MARK: - Preview devices
-extension Array where Element == PreviewDevice {
+public extension Array where Element == PreviewDevice {
     static var defaultPreviewSet: [PreviewDevice] {
         [
             PreviewDevice(rawValue: "iPhone SE (2nd generation)"),
