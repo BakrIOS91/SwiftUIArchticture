@@ -53,5 +53,5 @@ public class Preferences {
     fileprivate var preferencesChangedSubject = PassthroughSubject<AnyKeyPath, Never>()
     
     @UserDefault("kAppLanguage")
-    var locale: Locale? = .bestMatching
+    public var locale: Locale? = .bestMatching
 }
