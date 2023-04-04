@@ -8,6 +8,10 @@ import SwiftUI
 
 public extension View {
     
+    var shimmed: some View {
+        self.redacted(reason: .placeholder).modifier(AnimateRedacted())
+    }
+    
     @ViewBuilder
     func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
         if hidden {
