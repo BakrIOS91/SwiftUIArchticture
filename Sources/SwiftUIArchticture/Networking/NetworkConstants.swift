@@ -4,10 +4,10 @@
 
 import Foundation
 
-var kAppEnvironment: AppEnvironment = .staging
+public var kAppEnvironment: AppEnvironment = .staging
 
 // MARK: - kBaseURLComponents
-var kBaseURLComponents: URLComponents {
+public var kBaseURLComponents: URLComponents {
     var urlComponents = URLComponents()
     urlComponents.scheme = kScheme
     urlComponents.host = kHost
@@ -18,25 +18,26 @@ var kBaseURLComponents: URLComponents {
 }
 
 // MARK: - kBaseURL
-var kBaseURL: String = ""
+public var kBaseURL: String = ""
 
 // MARK: - kScheme
-var kScheme: String = ""
+public var kScheme: String = ""
 
 // MARK: - kHost
-var kHost: String = ""
+public var kHost: String = ""
 
 // MARK: - kPort
-var kPort: Int? = nil
+public var kPort: Int? = nil
 
+public var isInPreview: Bool {
+    return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+}
 
 // MARK: - all requests key parameters
-struct KeyParameters {
+public struct KeyParameters {
     static let contentTypeKey = "Content-Type"
     static let accept = "Accept"
     static let applicationJson = "application/json"
 }
 
-var isInPreview: Bool {
-    return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
-}
+
