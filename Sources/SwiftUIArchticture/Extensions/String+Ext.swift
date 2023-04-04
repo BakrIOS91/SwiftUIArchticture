@@ -5,9 +5,14 @@
 //  Created by Bakr mohamed on 04/04/2023.
 //
 
-import Foundation
+import SwiftUI
 
 public extension String {
+    
+    var localizedStringKey: LocalizedStringKey {
+        .init(self)
+    }
+    
     func displayToStringFromDate(
         formateFrom: DateFormatter.Formats,
         formateTo:DateFormatter.Formats,
