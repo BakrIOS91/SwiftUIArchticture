@@ -63,4 +63,24 @@ public extension String {
 
         return dateFormatter.string(from: dt ?? Date())
       }
+    
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
+    var toURL: URL? {
+        return URL(string: self)
+    }
+    
+    func replaceEmpty() -> String {
+        if self.isEmpty {
+            return "N/A"
+        }
+        
+        return self
+    }
 }

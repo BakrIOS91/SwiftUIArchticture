@@ -48,9 +48,9 @@ public struct LocalePreview<Content: View>: View {
 // MARK: - LocalePreviewContent
 
 public struct LocalePreviewContent: Identifiable {
-    let id = UUID()
-    let device: PreviewDevice?
-    let locale: Locale
+    public let id = UUID()
+    public let device: PreviewDevice?
+    public let locale: Locale
 }
 
 // MARK: - Preview devices
