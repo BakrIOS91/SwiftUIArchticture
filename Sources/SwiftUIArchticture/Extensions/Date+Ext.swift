@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
 
     func startOfHour() -> Date?{
         let calendar = Calendar.current

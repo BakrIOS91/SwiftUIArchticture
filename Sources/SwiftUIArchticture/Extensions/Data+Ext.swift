@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Data {
+public extension Data {
     var prettyPrintedJSONString: String? {
         guard let jsonObject = try? JSONSerialization.jsonObject(with: self, options: []),
               let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted]),
