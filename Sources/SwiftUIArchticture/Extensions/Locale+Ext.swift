@@ -14,7 +14,7 @@ public extension Locale {
     static let appSupported: [Locale] = [.en_US, .ar_EG]
 }
 
-extension Locale {
+public extension Locale {
     var nextSupportedLocale: Locale? {
         if var idx = Self.appSupported.firstIndex(of: self) ?? Self.appSupported.firstIndex(where: { self.languageCode == $0.languageCode }) {
             idx += 1
