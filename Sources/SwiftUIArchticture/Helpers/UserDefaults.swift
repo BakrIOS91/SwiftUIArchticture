@@ -55,13 +55,13 @@ public final class UserDefault<Value: Codable> {
         self.container = container
     }
     
-    private func decodeValue() -> Value {
+    public func decodeValue() -> Value {
         guard let data = container.data(forKey: key) else { return defaultValue }
         let value = try? JSONDecoder().decode(Value.self, from: data)
         return value ?? defaultValue
     }
     
-    private func encodeValue(
+    public func encodeValue(
         _ newValue: Value
     ) {
         if let optional = newValue as? AnyOptional, optional.isNil {
