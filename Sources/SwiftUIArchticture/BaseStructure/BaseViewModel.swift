@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol BaseViewModelProtocol: ObservableObject {
+public protocol BaseViewModelProtocol: ObservableObject {
     
     associatedtype State
     associatedtype Action
@@ -15,14 +15,14 @@ protocol BaseViewModelProtocol: ObservableObject {
     func trigger(_ action: Action)
 }
 
-public class BaseViewModel<State, Action>: BaseViewModelProtocol {
+open class BaseViewModel<State, Action>: BaseViewModelProtocol {
     @Published public var state: State
 
     public init(state: State) {
         self.state = state
     }
     
-    public func trigger(_ action: Action) {
+    open func trigger(_ action: Action) {
         // Should be override by child class
     }
 }
