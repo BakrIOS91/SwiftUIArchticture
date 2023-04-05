@@ -5,7 +5,8 @@
 import SwiftUI
 public struct LocalizedContentView<Content: View>: View {
     
-    @Preference(\.locale) var locale
+    @State var locale: Locale? = .bestMatching
+    
     var content: () -> Content
     
     init(
