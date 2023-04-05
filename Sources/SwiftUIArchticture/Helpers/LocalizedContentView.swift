@@ -9,7 +9,7 @@ public struct LocalizedContentView<Content: View>: View {
     
     var content: () -> Content
     
-    init(
+    public  init(
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.content = content

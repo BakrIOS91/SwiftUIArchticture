@@ -28,8 +28,8 @@ public struct Unwrap<Value, Content: View, FallbackContent: View>: View {
     }
 }
 
-extension Unwrap where FallbackContent == Never {
-    public init(
+public extension Unwrap where FallbackContent == Never {
+    init(
         _ value: Value?,
         @ViewBuilder content: @escaping (Value) -> Content
     ) {
