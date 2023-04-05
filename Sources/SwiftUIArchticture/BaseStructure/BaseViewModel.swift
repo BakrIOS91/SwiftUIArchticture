@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public protocol BaseViewModelProtocol: ObservableObject {
+protocol BaseViewModelProtocol: ObservableObject {
     
     associatedtype State
     associatedtype Action
@@ -16,9 +16,9 @@ public protocol BaseViewModelProtocol: ObservableObject {
 }
 
 public class BaseViewModel<State, Action>: BaseViewModelProtocol {
-    @Published var state: State
+    @Published public var state: State
 
-    init(state: State) {
+    public init(state: State) {
         self.state = state
     }
     
