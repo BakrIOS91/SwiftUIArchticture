@@ -58,7 +58,7 @@ public extension DateFormatter {
         return formatter
     }
 
-    func displayString(fromDate date: Date, withFormate format: Formats, locale: Locale = .en_US) -> String {
+    func displayString(fromDate date: Date, withFormate format: Formats, locale: Locale = .en) -> String {
         let formatter: DateFormatter = .gregorian(
             dateFormat: format.rawValue,
             locale: locale
@@ -69,13 +69,13 @@ public extension DateFormatter {
     
     func sendString(fromDate date: Date, withFormate format: Formats) -> String {
         self.dateFormat = format.rawValue
-        self.locale = .init(identifier: "en_US")
+        self.locale = .init(identifier: "en")
         let dateString = string(from: date)
         return dateString
     }
 
 
-    func date(fromString string: String, withFormat format: Formats, locale: Locale = .en_US) -> Date? {
+    func date(fromString string: String, withFormat format: Formats, locale: Locale = .en) -> Date? {
         let formatter: DateFormatter = .gregorian(
             dateFormat: format.rawValue,
             locale: locale
