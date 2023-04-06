@@ -16,7 +16,7 @@ public extension String {
     func displayToStringFromDate(
         formateFrom: DateFormatter.Formats,
         formateTo:DateFormatter.Formats,
-        locale: Locale = .en_US
+        locale: Locale = .en
     ) -> String {
         if let dateFromString = DateFormatter().date(fromString: self, withFormat: formateFrom, locale: locale)?.startOfHour() {
             return DateFormatter().displayString(fromDate: dateFromString, withFormate: formateTo, locale: locale).UTCToLocal(fromFormat: formateTo, toFormat: formateTo, locale: locale)
@@ -35,7 +35,7 @@ public extension String {
     }
     
     //MARK:- Convert UTC To Local Date by passing date formats value
-    func UTCToLocal(fromFormat: DateFormatter.Formats = .hmma, toFormat: DateFormatter.Formats = .hmma,locale: Locale = .en_US) -> String {
+    func UTCToLocal(fromFormat: DateFormatter.Formats = .hmma, toFormat: DateFormatter.Formats = .hmma,locale: Locale = .en) -> String {
         
         let dateFormatter: DateFormatter = .gregorian(
             dateFormat: fromFormat.rawValue,
