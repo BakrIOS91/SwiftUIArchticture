@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 public extension Locale {
-    static let en_US: Locale = .init(identifier: "en_US")
-    static let ar_EG: Locale = .init(identifier: "ar_EG")
-    static let appSupported: [Locale] = [.en_US, .ar_EG]
+    static let en: Locale = .init(identifier: "en")
+    static let ar: Locale = .init(identifier: "ar")
+    static let appSupported: [Locale] = [.en, .ar]
 }
 
 public extension Locale {
@@ -28,8 +28,8 @@ public extension Locale {
     /// Selects supported locale based on current locale
     static var bestMatching: Locale {
         switch Locale.current.identifier {
-        case let id where id.starts(with: "en"): return .en_US
-        default: return .ar_EG
+        case let id where id.starts(with: "en"): return .en
+        default: return .ar
         }
     }
 }
@@ -41,7 +41,7 @@ public extension Locale {
     // Hebrew "he", "he_IL"
     // Persian/Farsi "fa", "fa_IR"
     // Urdu "ur", "ur_IN", "ur_PK"
-    private static let rtlLanguageCodes = ["ar_EG", "he", "he_IL", "fa", "fa_IR", "ur", "ur_IN", "ur_PK"]
+    private static let rtlLanguageCodes = ["ar", "he", "he_IL", "fa", "fa_IR", "ur", "ur_IN", "ur_PK"]
     
     var layoutDirection: LayoutDirection {
         Self.rtlLanguageCodes.contains(self.languageCode ?? "") ? .rightToLeft : .leftToRight
