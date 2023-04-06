@@ -5,11 +5,10 @@
 import SwiftUI
 public struct LocalizedContentView<Content: View>: View {
     
-    @State var locale: Locale? = .bestMatching
-    
+    @Preference(\.locale) var locale
     var content: () -> Content
     
-    public  init(
+    public init(
         @ViewBuilder content: @escaping () -> Content
     ) {
         self.content = content
