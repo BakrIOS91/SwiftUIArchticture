@@ -10,7 +10,7 @@ import SwiftUI
 
 public extension Locale {
     static let en: Locale = .init(identifier: "en")
-    static let ar: Locale = .init(identifier: "ar")
+    static let ar: Locale = .init(identifier: "ar-EG")
     static let appSupported: [Locale] = [.en, .ar]
 }
 
